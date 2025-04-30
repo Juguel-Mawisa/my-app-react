@@ -1,45 +1,21 @@
-import { ReactNode } from "react";
+import { ReactNode} from "react";
 import CarteUtilisateur from "./composants/CarteUtilisateur";
 import Compteur from "./composants/Compteur";
-
+import {useState,useEffect} from "react"
+type Props = {}
 const App = () => {
-    const utilisateurs = [
-        {
-            id: 1,
-            nom: "juguel",
-            age: 20,
-        },
-        {
-            id: 2,
-            nom: "Ferto",
-            age: 35,
-        },
-        {
-            id: 3,
-            nom: "Obed",
-            age: 17,
-        },
-        {
-            id: 4,
-            nom: "Percy",
-            age: 30,
-        }
-    ]
+    const [compteur, setCompteur] = useState(0)
+   
+    useEffect(() => {
+        document.title = `Vous avez cliqué ${compteur} fois`
+    }, [compteur])
     return(
         <div>
-            <h1>Les evenements en react</h1>
-            <Compteur/>
-            <Compteur/>
-            <Compteur/>
-            <Compteur/>
-            {
-
-                // utilisateurs.map(u =>( 
-                //    <CarteUtilisateur utilisateur={u}
-                //    key={u.id}/>
-                   
-                // ))
-            }
+            <h1>Les effets en react</h1>
+        <div>
+            <button onClick={() =>setCompteur(compteur + 1)}>Incrémenter</button>
+            <h3>Compteur : {compteur}</h3>
+        </div>
            
         </div>
     )

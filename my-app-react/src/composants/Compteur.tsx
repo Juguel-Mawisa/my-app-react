@@ -4,8 +4,7 @@ type Props = {}
 export default function Compteur({}: Props) {
 
     const [compteur, setCompteur] = useState(0)
-    const [nom, setNom] = useState("juguel")
-  
+    
     const handleClick = () => {
         setCompteur(compteur + 1)
             
