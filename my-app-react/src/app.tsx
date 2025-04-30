@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import CarteUtilisateur from "./composants/CarteUtilisateur";
+import Compteur from "./composants/Compteur";
 
 const App = () => {
     const utilisateurs = [
@@ -26,13 +27,18 @@ const App = () => {
     ]
     return(
         <div>
-            <h1>Rendre une liste</h1>
+            <h1>Les evenements en react</h1>
+            <Compteur/>
+            <Compteur/>
+            <Compteur/>
+            <Compteur/>
             {
-                utilisateurs.map(u =>( 
-                   <CarteUtilisateur utilisateur={u}
-                   key={u.id}/>
+
+                // utilisateurs.map(u =>( 
+                //    <CarteUtilisateur utilisateur={u}
+                //    key={u.id}/>
                    
-                ))
+                // ))
             }
            
         </div>
